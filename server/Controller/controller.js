@@ -271,7 +271,7 @@ class MainController {
               const pool = await poolPromise
                 const result = await pool.request()
                 .input('userID',sql.Int , req.body.UserId)
-                .input('userCode',sql.VarChar(100) , req.body.UserCode)
+                .input('userCode',sql.Int , req.body.UserCode)
                 .input('userName',sql.VarChar(100),req.body.UserName)
                 .input('statusID',sql.Int,req.body.StatusID)
                 .input('email',sql.VarChar(100),req.body.Email)

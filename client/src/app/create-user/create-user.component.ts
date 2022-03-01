@@ -130,8 +130,7 @@ UserMaintainId:number=0;
     }
    
     if(this.txtUserCode !='' && this.txtUserName !=''  && this.txtemail !='' && this.txtstatus !='')
-   // this. User.UserId=8;
-    // this.User.StatusID=115; 
+   
     
     this.User.UserCode = this.txtUserCode;
       this.User.UserName = this.txtUserName;
@@ -141,7 +140,7 @@ UserMaintainId:number=0;
       this.User.Password=this.result;
     this.User.CompanyID = this.selcompany;
     this.User.StatusID=this.selectestatus;
-      // this.User.StatusID=this.txtstatus;
+     
       console.log (this.selectestatus);
       
       this.User.CreatedBy=350586;

@@ -34,17 +34,18 @@ companyfilter:Icompanyfilter[] = []
 arr:Array<string>=[];
 add:number = 1;
 UserMaintainId:number=0;
-UserID1:number=1;
+UserID1:number=0;
 public UserIDservice:any;
    constructor(private dialogRef:MatDialog,private MasterService:ServicesService,private UserService:ServicesService, private router:Router) { 
     UserService.GetUserMaintenance().subscribe((p) => { this.user = p; } );
     UserService.GetMasterMaintenance().subscribe((mm) => { this.mastermaintain1 = mm; });
     UserService.Getfiltervalues().subscribe((f) => {this.companyfilter = f;});
-    UserService.GetUserMasterID(this.UserID1).subscribe((p) => { this.user = p; } );
-this.UserIDservice=UserService;
    }
 
-updateusers(){
+updateusers(UserId1:number){
+  console.log(UserId1);
+  sessionStorage.setItem("UserId1",JSON.stringify(UserId1));
+
   this.dialogRef.open(UserupdateComponent);
 }
 sasi(){

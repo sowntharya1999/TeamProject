@@ -15,84 +15,34 @@ import { Router } from '@angular/router';
   styleUrls: ['./userupdate.component.css']
 })
 export class UserupdateComponent implements OnInit {
-
-  Temp: any =  sessionStorage.getItem("UserId");
-
+  Temp: any =  sessionStorage.getItem("UserId1");
   Userid:number = parseInt(this.Temp);
 
-  User: IUsermaintenance = {} as IUsermaintenance;
-  user:IUsermaintenance[]=[];
+  User:IUsermaintenance[] = [];
   users: IUsermaintenance = {} as IUsermaintenance;
-mastertype:IMasterType []=[];
-mastermaintain:IMasterMaintenance = {} as IMasterMaintenance
-mastermaintain1:IMasterMaintenance [] = []
-companyfilter:Icompanyfilter[] = []
-arr:Array<string>=[];
-add:number = 1;
-UserMaintainId:number=0;
-UserID1:number=1;
-public UserIDservice:any;
+  companyfilter:Icompanyfilter[] = [];
+  Statusfilter:Icompanyfilter[] = []
    constructor(private dialogRef:MatDialog,private MasterService:ServicesService,private UserService:ServicesService, private router:Router) { 
-    UserService.GetUserMaintenance().subscribe((p) => { this.user = p; } );
-    UserService.GetMasterMaintenance().subscribe((mm) => { this.mastermaintain1 = mm; });
+    UserService.GetUserMasterID(this.Userid).subscribe((p) => { this.User = p; } );
     UserService.Getfiltervalues().subscribe((f) => {this.companyfilter = f;});
-    UserService.GetUserMasterID(this.UserID1).subscribe((p) => { this.user = p; } );
-this.UserIDservice=UserService;
-   }
+    UserService.GetStatusfiltervalues().subscribe((SF) => {this.Statusfilter = SF;});
 
-updateusers(){
-  this.dialogRef.open(UserupdateComponent);
-}
-sasi(){
-  console.log(this.user);
-}
-selectbtn(){
-     console.log(this.companyfilter);
-    console.log(this.mastermaintain1.length);
-    
-    this.dialogRef.open(CreateUserComponent);
-    
-    for(let i =0;i<this.mastermaintain1.length;i++)
-    {
-     if(this.mastermaintain1[i].MasterTypeID == 1024)
-     {
-      this.arr[this.add] = this.mastermaintain1[i].Description;
-      this.add++; 
-      
-     }
+   console.log(this.Userid);
    }
-   console.log(this.arr);
-   }
-  // MasterTypeID:any;
- 
-click()
-{
-  
-}
-selected(change:MatSelectChange) {
-//  // console.log(this.mastermaintain1[0].MasterTypeID);
-//  for(let i =0;i<this.mastermaintain1.length;i++)
-//  {
-//   if(this.mastermaintain1[i].MasterTypeID == 1024)
-//   {
-//    this.arr[this.add] = this.mastermaintain1[i].Description;
-//    this.add++; 
+   selectestatus:number=0;
+   selectedstatus(change:MatSelectChange)
+   {
+    this.selectestatus = change.value.MasterID;
    
-//     // this.UserMaintainId = change.value.MasterTypeID;
-//     // // console.log("hi");
-//     // console.log( change.value.MasterTypeID);
-//   }
-//   //console.log(change.value.Description);
-  
-//   // console.log(change.value.Description);
-
-//   // console.log(change.value.MasterTypeID)
-
-  this.UserMaintainId = change.value.MasterTypeID;
-console.log(this.companyfilter[0].Description);
-// //  console.log(this.UserMaintainId);
   }
 
+selected(change:MatSelectChange) {
+  
+
+  }
+  reloadCurrentPage() {
+    window.location.reload();
+   }
 
    ngOnInit(): void {
 
@@ -120,11 +70,7 @@ result:string="";
   inputAlertVisible1:any=false;
   
   
-    // Delete(UserName:any){
-    //   this.UserService.RemoveUser(this.User.UserName).subscribe(res => console.log(res));
-    //   console.log(this.User.UserName);
-    //   alert("Deleted Successfully");
-    // }
+  
   
   reset() {
     this.txtUserCode = ""
@@ -135,19 +81,19 @@ result:string="";
 
   
    }
-   UpdateDetail(): void {
+   UpdateUser(): void {
 
-    this.users.UserId= 40;
-    this.users.UserCode =this.txtusercode;
-    this.users.UserName = this.txtusername;
-    this.users.Email =  this.txtemail;
-    this.users.StatusID = 112;
+    this.users.UserId= this.Userid;
+    this.users.UserCode =this.User[0].UserCode;
+    this.users.UserName = this.User[0].UserName;
+    this.users.Email =  this.User[0].Email;
+    this.users.StatusID = this.selectestatus;
     this.users.Password="sownth@123"
     this.users.CreatedBy=350586;
     this.users.CreatedDate="2022-12-02T00:00:00.000Z";
     this.users.ModifiedBy=350586;
     this.users.ModifiedDate="2022-12-02T00:00:00.000Z";
-
+    console.log(this.users);
     this.UserService.UpdateUserMaintain(this.users).subscribe(res => { console.log(res); });
     alert("Updated Successfully...");
   }

@@ -1,99 +1,72 @@
-<!-- update  User -->
-   
 <div class="cont">
-    <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog m-auto mt-5">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title headers_cs" id="exampleModalLabel">User Maintenance</h1>
-            <button type="button" class="btn-close mar" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <div class="container">
-              <div class="title">Enter User Details</div>
-                <div class="content">
-                 <form>
-                   <div class="user-details">
-                     <div class="input-box form-group">
-                        <span class="details">User Code</span>
-                        <input type="number" id="txtUserCode" name="txtusercode" [(ngModel)]="txtusercode"
-                        placeholder="Enter your User Code" required>
-                        
 
-                    </div>
-                    <div class="input-box">
-                      <span class="details">User Name</span>
-                      <input type="text" id="txtUserName" name="txtusername" [(ngModel)]="txtusername"
-                        placeholder="Enter your User Name" required>
-                     
+  <div class="modal-content">
+    <div class="modal-header">
+      <h1 class="modal-title headers_cs" id="exampleModalLabel">User Maintenance</h1>
+      <button type="button" class="btn-close mar" (click)="reloadCurrentPage()" ></button>
+    </div>
+    <div class="modal-body">
+      <div class="container">
+        <div class="title">Enter User Details</div>
+        <div class="content">
 
-                    </div>
-                    
-                    <div class="input-box">
-                      <span class="details">Email</span>
-                      <input type="text" id="txtEmail" name="txtemail" [(ngModel)]="txtemail" placeholder="Enter your Email"
-                        required>
-                     
-                    </div>
-                    <div class="input-box">
-                      <mat-form-field appearance="fill">    
+          <form>
+            <div class="user-details">
+              <div class="input-box form-group">
+                <span class="details">User Code</span>
+                <input type="number" id="txtUserCode" name="txtusercode" [(ngModel)]="User[0].UserCode"
+                  placeholder="Enter your User Code" required>
 
-                        <mat-select id="txtcompany" placeholder="Choose Company"  name= "txtcompany"   [(ngModel)]="txtcompany" (selectionChange)="selected($event)">
-                
-                           
-                
-                         <mat-option *ngFor="let UserMaintenance of companyfilter" [value]="UserMaintenance">
-                
-                             {{UserMaintenance.Description}}</mat-option>
-                
-                           </mat-select>
-                
-                          </mat-form-field>
-                
-                        <!-- <p style="color:red;font-size:10px;" *ngIf="inputAlertvisible3">Select the company </p> -->
-                
-                      
-                    </div>
 
-                    <!-- <tr>
-                      <td><label>Company</label></td>
-                      <td>:</td>
-                      <td><input type="text" class="form-control" id="txtcompany" [(ngModel)]="user.StatusID"  /></td>
-                      
-                  </tr>
-                  <tr>
-                      <td><label>Status</label></td>
-                      <td>:</td>
-                      <td>
-                          <select class="form-control" [(ngModel)]="user.StatusID" class="custom-select" 
-                          style="width:150px;">
-                               <option value="1">Active</option>
-                              <option value="0">In-Active</option> 
-                          </select>
-                      </td> -->
-                   
-                    <!-- <div class="input-box">
-                      <span class="details">Status</span>
-                      <select [(ngModel)]="users.StatusID"  required>
-                        <option value="" disabled selected>Select the Status</option>
-                        <option value="101">Active</option>
-                        <option value="102">In-Active</option>
-                      </select>
-                     
-
-                    </div> -->
-                  </div>
-                  <div class="button">
-                    <button >sasi</button>
-                    <input type="submit" value="Update" class="mar">
-                    <input type="reset" class="coolest" value="Reset">
-                  </div>
-                </form>
               </div>
+              <div class="input-box">
+                <span class="details">User Name</span>
+                <input type="text" id="txtUserName" name="txtusername" [(ngModel)]="User[0].UserName"
+                  placeholder="Enter your User Name" required>
+
+
+              </div>
+
+              <div class="input-box">
+                <span class="details">Email</span>
+                <input type="text" id="txtEmail" name="txtemail" [(ngModel)]="User[0].Email" placeholder="Enter your Email"
+                  required>
+
+              </div>
+              <div class="input-box">
+                <mat-form-field appearance="fill">
+
+                  <mat-select id="txtcompany" placeholder="Choose Company" name="txtcompany" class="form-control" [(ngModel)]="User[0].Description"
+                    (selectionChange)="selected($event)">
+                    <mat-option *ngFor="let UserMaintenance of companyfilter" [value]="UserMaintenance">
+                      {{UserMaintenance.Description}}</mat-option>
+                  </mat-select>
+
+                </mat-form-field>
+                <div class="form-group col-md-3">
+                 
+                  <mat-label for="type" id="lab_status">Status<span>*</span></mat-label>                   
+                   <mat-select id="txtstatus" placeholder="Choose" class="form-control"   name= "txtstatus"   [(ngModel)]="txtstatus" (selectionChange)="selectedstatus($event)">
+                      
+                    <mat-option *ngFor="let Userstatus of Statusfilter"  [value]="Userstatus">
+                        {{Userstatus.Description}}</mat-option>
+                      </mat-select>
+                    <p style="color:red" *ngIf="inputAlertVisible1">Choose any one master type</p>
+                </div>
+
+
+              </div>
+
+
             </div>
-          </div>
+            <div class="button">
+              
+              <input type="submit" value="Update" (click)="UpdateUser()" class="mar">
+              <input type="reset" class="coolest" value="Reset">
+            </div>
+          </form>
         </div>
       </div>
     </div>
+  </div>
 </div>
-

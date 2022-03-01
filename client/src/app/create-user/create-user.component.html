@@ -1,13 +1,9 @@
 <div class="cont">
-
-          <!-- <div class="modal-header">
-            <h1 class="modal-title headers_cs" id="exampleModalLabel">User Maintenance</h1>
-            <button type="button" class="btn-close mar" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div> -->
           <div class="modal-body">
             <div class="container">
               <div class="title">Enter User Details</div>
                 <div class="content">
+                  
                  <form>
                    <div class="user-details">
                      <div class="input-box form-group">
@@ -54,24 +50,9 @@
                           
                         <mat-option *ngFor="let Userstatus of Statusfilter"  [value]="Userstatus">
                             {{Userstatus.Description}}</mat-option>
-
                           </mat-select>
-
-                         
                         <p style="color:red" *ngIf="inputAlertVisible1">Choose any one master type</p>
-                    
                     </div>
-                   
-                    <!-- <div class="input-box">
-                      <span class="details">Status</span>
-                      <select name="txtstatus" [(ngModel)]="txtstatus" id="status" required>
-                        <option value="" disabled selected>Select the Status</option>
-                        <option value="115">Active</option>
-                        <option value="116">In-Active</option>
-                      </select>
-                      <p style="color:red;font-size:10px;" *ngIf="inputAlertVisible">Select the status </p>
-
-                    </div> -->
                   </div>
                   <div class="button">
                     <input type="submit" (click)="submit()" value="Save" class="mar">
