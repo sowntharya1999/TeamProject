@@ -1,0 +1,70 @@
+mat-toolbar{
+  height: 30px;
+ margin-top: -12px;
+ text-align: center;
+}
+
+h5{
+  margin-left: 500px;
+  /* font-family:'Courier New', Courier, monospace; */
+  font-family: poppins san serif;
+  font-weight: 900;
+}
+
+span{
+    color: red;
+   
+}
+#Btn_design{
+  margin-left: 150px;
+  margin-top: 35px;
+ 
+}
+#btnReset{
+    margin-left: 20px;
+    background-color: gray;
+    color: whitesmoke;
+}
+
+  /* #status:hover {
+    background-color: black;
+  }  */
+
+body{
+ font-family: ' poppins san serif';
+ 
+}
+
+
+#masterType{
+  margin-left: 400px;
+}
+.alignment{
+  margin-left: 20px;
+}
+
+
+/*table*/
+#table{
+  margin-top: 10px;
+  width: 960px;
+  align-content: center;
+  /* margin-left: 150px; */
+}
+th {
+  height: 20px;
+}
+.update{
+  height: 2px;
+}
+#option2{
+  height: 10px;
+}
+.text {
+  text-align: center;
+}
+.table td, th{
+
+  padding: 3px;
+  
+  }

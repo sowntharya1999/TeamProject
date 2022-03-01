@@ -1,0 +1,44 @@
+
+<body><div>
+    <table>
+        <tr>
+            <td><label>UserId</label></td>
+            <td>:</td>
+             <td>{{Userid}}</td> 
+        </tr>
+        <tr>
+            <td><label class="text-inf">UserCode</label></td>
+            <td>:</td> 
+            <td>
+                <input type="text"  class="form-control" id="txtuserid"  [(ngModel)]="user.UserId"   />
+            </td>
+        </tr>
+        <tr>
+            <td><label>UserName</label></td>
+            <td>:</td>  
+            <td><input type="text" class="form-control" id="txtusername"  [(ngModel)]="user.UserName"></td>
+        </tr>
+        <tr>
+            <td><label>Company</label></td>
+            <td>:</td>
+            <td><input type="text" class="form-control" id="txtcompany" [(ngModel)]="user.StatusID"  /></td>
+            
+        </tr>
+        <tr>
+            <td><label>Status</label></td>
+            <td>:</td>
+            <td>
+                <select class="form-control" [(ngModel)]="user.StatusID" class="custom-select" 
+                style="width:150px;">
+                    <option value="1">Active</option>
+                    <option value="0">In-Active</option>
+                </select>
+            </td>
+            
+        </tr>
+    </table>
+</div>
+
+ 
+    <button id="butto1" mat-raised-button color="primary" (click)="UpdateDetail()" >update</button>
+</body>

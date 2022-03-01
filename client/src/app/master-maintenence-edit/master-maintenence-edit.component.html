@@ -1,0 +1,49 @@
+
+                
+ <body><div>
+    <table>
+          <!-- <tr>
+            <td><label>Master ID</label></td>
+            <td>:</td>
+             <td>{{MasterID}}</td> 
+        </tr><br> -->
+       <tr>
+           <td>    <label for="type" id="lab_masterType">Master Type<span>*</span></label></td>
+           <td>:</td> 
+           <td> <mat-select id="mastertype" class="form-control"  name= "mastertype" [(value)]="mastertype" (selectionChange)="selected($event)">
+             <mat-option *ngFor="let MasterMaintenance of MasterType" [value]="MasterMaintenance">
+               {{MasterMaintenance.MasterTypeDescription}}</mat-option></mat-select>
+          <p style="color:red" *ngIf="inputAlertVisible">Choose any one master type</p>
+         </td>
+       
+       
+        </tr><br> 
+        <tr>
+            <td><label class="text-inf">Master Type Description</label><span>*</span></td>
+            <td>:</td> 
+            <td>
+                <input type="text"  class="form-control" id="txtmasterdescription"  name= "txtmasterdescription" [(ngModel)]="txtmasterdescription"  />
+                <p style="color:red" *ngIf="inputAlertVisible1">Choose any one master type</p>
+            </td>
+           
+        </tr><br>
+       
+        
+        <tr>
+            <td><label>Status</label><span>*</span></td>
+            <td>:</td>
+            <td>
+                <select class="form-control"  class="custom-select" 
+                style="width:150px;" id="status" name= "status" [(ngModel)]="status" >
+                    <option value="Active">Active</option>
+                    <option value="In-Active">In-Active</option>
+                </select>
+                <p style="color:red" *ngIf="inputAlertVisible2">Choose any one master type</p>
+            </td>
+            
+        </tr>
+    </table>
+</div> 
+
+ 
+    <button id="butto1" mat-raised-button color="primary" (click)="UpdateDetail()" >update</button>

@@ -1,0 +1,32 @@
+/* .example-button-row {
+    display: table-cell;
+    width: 100px;
+    mar
+  
+} */
+/* .example-spacer{
+ /* padding: 20px; */
+ /* height: 10px;
+ background-color: hotpink;
+} */
+/* #rightid{
+  margin-left: -10px;
+} */ 
+ /* .NavAdmin{
+   background-color: rgb(194, 183, 183);
+  
+ } */
+ #btn-logout{
+   margin-left: 800px;
+ } 
+ mat-toolbar{
+   background-color: rgb(201, 198, 198);
+   height: 35px;
+ 
+ } 
+ /* body{
+  font-family:'Courier New', Courier, monospace;
+  font-weight: 900;
+ } */
+
+ 

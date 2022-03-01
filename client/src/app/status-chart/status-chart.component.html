@@ -1,0 +1,117 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<p class="example-spacer">
+  <mat-toolbar>
+
+    <section>
+
+      <div class="example-button-row">
+
+        <button mat-button id="PROFILE">Welcome, {{User_Name}}!</button>
+
+        <button mat-button id="btn-logout" routerLink="/login">
+          <mat-icon>lock</mat-icon>Logout
+        </button>
+
+      </div>
+    </section>
+  </mat-toolbar>
+</p>
+
+<body id="bodySize">
+  <div class="row">
+
+    <div class="column">
+      <h1><u>USERS BY COMPANY</u></h1>
+      <Label id="choosegraph">Choose your graph : </Label>
+      <select class="form-select-sm dropdown" aria-label="Default select example">
+        <option selected> Chart Type </option>
+        <option value="1">Bar</option>
+        <option value="2">Pie</option>
+        <!-- <option value="3">Three</option> -->
+      </select>
+      <!-- <button mat-button  color="primary">Click Here To View Chart</button> -->
+
+      <i class="fa fa-bar-chart" style="font-size:30px;color:red; margin-left: 10px;"(click)="cilck()"></i>
+      <div id="maindiv">
+
+        <div id="divbarchart">
+
+          <canvas id="myChart"></canvas>
+          <div class="GridView">
+            <table class="tsize">
+              <tr class="grids">
+                <th class="grid">Company</th>
+                <th class="grid">Active</th>
+                <th class="grid">InActive</th>
+
+
+              </tr>
+              <tr class="grids" *ngFor="let chart of charts" >
+
+                <td>{{chart.Company}}</td>
+                <td>{{chart.Active}}</td>
+                <td>{{chart.InActive}}</td>
+               
+
+
+              </tr>
+              
+
+
+
+
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+
+
+
+      <!-- <div id="maindiv">
+        <p style="color: rgb(22, 22, 22);">Chart works</p> 
+        <div id="divbarchart">
+             <canvas id="myChart"></canvas>
+
+        </div>
+      </div> -->
+    </div>
+    <div class="column">
+      <h1><u>CHAT MESSAGES</u></h1>
+      <Label id="choosechart">Choose your graph : </Label>
+      <select class="form-select-sm dropdownlist" aria-label="Default select example">
+        <option selected> Chart Type </option>
+        <option value="1">Bar</option>
+        <option value="2">Pie</option>
+      </select>
+      <div id="divchatchart">
+        <canvas id="mychatChart"></canvas>
+      </div>
+
+      <div id="maindiv">
+        <!-- <p style="color: rgb(22, 22, 22);">Chart works</p> -->
+        <div id="divchart">
+
+          <!-- <canvas id="myChart"></canvas> -->
+        </div>
+      </div>
+
+
+
+    </div>
+
+
+  <div class="column2">
+    <mat-icon id="chaticon" (click)="chatpage()">question_answer</mat-icon>
+
+    <label id="chatbox"><h2>Chatbox</h2></label>
+<!-- <button type="submit" class="chat">Chat</button> -->
+</div>
+
+</div>
+<table>
+
+</table>
+
+</body>

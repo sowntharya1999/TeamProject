@@ -1,0 +1,105 @@
+<app-nav-bar-admin></app-nav-bar-admin>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    
+</head>
+
+
+<body>
+    <!-- <form novalidate
+    [formGroup]="myform"
+    (ngSubmit)="reset()" action="" name="MasterType" id="MasterType"> -->
+     <form action="" name="MasterType" id="MasterType"  >
+        <p >
+            <mat-toolbar>
+                <h5>Master Type Maintenance</h5>
+              
+            </mat-toolbar>
+          </p>
+          <div id="masterType">      
+                  <div class="row">
+
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="type_Description" id="lab_Description">Master Type Description<span>*</span></label>
+                          <input type="text" class="form-control" name="txtMasterType" id="txtMasterType" [(ngModel)]="txtMasterType" autocomplete="off" required>
+                          <p style="color:red" *ngIf="inputAlertVisible1">Please enter master type description</p>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="type_Description" id="lab_Description">Status<span>*</span></label>
+                            <select name="status" id="status" [(ngModel)]="status" class="form-select form-select-md" required>
+                                <option></option>
+                                <option value="Active">Active</option>
+                                <option value="In-Active">In-Active</option>
+                            </select>
+                            <p style="color:red" *ngIf="inputAlertVisible">Choose any one status</p>
+                        </div>
+                        <div class="form-group col-md-4">
+                        <div id="Btn_design">
+                            <button type="button" class="btn btn btn-secondary btn-sm" id="btnSubmit" (click)="submit()">Submit</button>
+                            <button type="button" class="btn btn btn-outline-secondary btn-sm" id="btnReset" (click)="reset()">Reset</button>
+                        </div> 
+                        </div>
+                      </div>
+            <!-- <div class="col">
+                <label for="type_Description" id="lab_Description">Master Type Description<span>*</span></label>
+                <input type="text" class="form-control"  name="txtMasterType" id="txtMasterType" [(ngModel)]="txtMasterType"  autocomplete="off" required>
+                <p style="color:red" *ngIf="inputAlertVisible1">Fill the description</p>
+    
+            </div>
+            <div class="col">
+                <label for="Status" id="lab_status">Status<span>*</span></label>
+                <select name="status" id="status" [(ngModel)]="status" required>
+                    <option></option>
+                    <option>Active</option>
+                    <option>In-Active</option>
+                </select>
+                <p style="color:red" *ngIf="inputAlertVisible">Choose any one</p>
+            </div>-->
+          </div> 
+
+        </div>
+        
+
+<!-- table -->
+<div id="table">
+    <table class="table text">
+      <thead>
+        <tr>
+          <th scope="col" id="action">Action</th>
+       
+          <!-- <th scope="col">MasterType</th> -->
+          <th scope="col" id="Mastertypedescription">Master Type Description</th>
+          <th scope="col" id="status">Status</th>
+         
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let MasterTypeMaintenance of Mastertype">
+          <td>
+            <mat-icon (click) = "Update(MasterTypeMaintenance.MasterTypeID)">create</mat-icon>
+            <mat-icon (click)="DeleteMasterType(MasterTypeMaintenance.MasterTypeID)">delete</mat-icon>
+            <!-- <button type="button"  style="margin:5px;" class="btn btn-secondary btn-sm" (click) = "Update(MasterTypeMaintenance.MasterTypeID,MasterTypeMaintenance.Description,MasterTypeMaintenance.Status)">Update</button>
+            <button type="button"  style="margin:5px;" (click)="DeleteMasterType(MasterTypeMaintenance.MasterTypeID)" class="btn btn-secondary btn-sm">Delete</button>
+            -->
+          </td>
+         
+          <!-- <td >{{MasterTypeMaintenance.MasterTypeID}}</td> -->
+          <td>{{MasterTypeMaintenance.MasterTypeDescription}}</td>
+          <td>{{MasterTypeMaintenance.Status}}</td>
+         
+        </tr>
+        
+      </tbody>
+    </table>
+    </div>
+      
+</form>
+</body>
+
+</html>

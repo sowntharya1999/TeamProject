@@ -1,0 +1,65 @@
+<form>
+    
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label>Master Type Description</label><span>*</span>
+        <input type="text" class="form-control" id="txtmastertypedescription" name="txtmastertypedescription" [(ngModel)]="MasterTypeID[0].MasterTypeDescription" >
+        <p style="color:red" *ngIf="inputAlertVisible1">Please Enter Master Type Description</p> 
+    </div>
+      <div class="form-group col-md-6">
+        <label>Status</label><span>*</span>
+        <select  class="form-select" 
+        style="width:150px;" id="status" name= "status"  [(ngModel)]="MasterTypeID[0].Status"  >
+       
+            <option value="Active">Active</option>
+            <option value="In-Active">In-Active</option>
+        </select>
+        <p style="color:red" *ngIf="inputAlertVisible2">Please enter master type description</p>
+      </div>
+      
+    </div>
+    <button id="butto1" mat-raised-button color="grey" (click)="UpdateDetail()" >update</button>
+   
+  </form>
+<!-- 
+<body>
+    <button type="button" id="Close" class="btn-close mar" data-bs-dismiss="modal" aria-label="Close"></button>
+    <div>
+    
+    <table>
+        <tr>
+            <td><label>MasterType ID</label></td>
+            <td>:</td>
+             <td>{{MasterID}}</td> 
+        </tr><br>
+        <tr>
+            <td><label class="text-inf">Master Type Description</label><span>*</span></td>
+            <td>:</td> 
+            <td>
+                <input type="text"  class="form-control" id="txtmastertypedescription" autocomplete="{{MasterDescription}}" placeholder={{MasterDescription}} name= "txtmastertypedescription" [(ngModel)]="txtmastertypedescription"  />
+                <p style="color:red" *ngIf="inputAlertVisible1">Please enter master type description</p>
+            </td>
+        </tr><br>
+       
+        
+        <tr>
+            <td><label>Status</label> <span>*</span></td>
+
+            <td>:</td>
+            <td>
+                <select class="form-control"  class="custom-select" 
+                style="width:150px;" id="status" name= "status"  [(ngModel)]="status"  >{{Status}}
+               
+                    <option value="Active">Active</option>
+                    <option value="In-Active">In-Active</option>
+                </select>
+                <p style="color:red" *ngIf="inputAlertVisible2">Please enter master type description</p>
+            </td>
+            
+        </tr>
+    </table>
+</div>
+
+ 
+    <button id="butto1" mat-raised-button color="grey" (click)="UpdateDetail()" >update</button>
+</body> -->

@@ -1,0 +1,41 @@
+/* #divleft{
+    float: left;
+    width: 49%;
+    font-family: cursive;
+    font-size: large;
+}
+
+#divright{
+    float: right;
+    width: 49%;
+    font-family: cursive;
+    font-size: large;
+}
+body{
+    background-color: rgb(226, 226, 226);
+  
+}
+#balance{
+    margin-top: 20px;
+    padding-right: 200px;
+    font-family: cursive;
+    font-size: large;
+    
+}
+#butto1{
+    margin-top: 20px;
+    margin-left: 360px;
+    color: whitesmoke;
+    background-color: gray;
+} */
+#butto1{
+    margin-left: 280px;
+    color: whitesmoke;
+    background-color: gray;
+}
+span{
+    color: red;
+}
+#Close{
+    margin-left: 410px;
+}

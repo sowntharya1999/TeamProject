@@ -1,0 +1,35 @@
+
+.example-button-row {
+    display: table-cell;
+    width: 490px;
+  }
+  #btn-login{
+      margin-left: 700px;
+  }
+  img{
+      height: 50px;
+    width: 50px;
+      border-radius: 50px;
+      float: left;
+      margin-top: -5px;
+}
+.headerclass{
+   height: 50px;
+  
+
+}
+  span{
+      text-align: center;
+      font-family: 'Dancing Script';
+    
+  }
+  h2{
+    /* margin-top: 5px; */
+    padding-top: 5px;
+    margin-left: 530px;
+    font-weight:900;
+    font-size: xx-large;
+    font-family: 'Dancing Script';
+    color:rgb(238, 218, 218);
+  }
+ 

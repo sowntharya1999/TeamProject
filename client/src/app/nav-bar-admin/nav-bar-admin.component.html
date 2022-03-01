@@ -1,0 +1,22 @@
+ <body>
+ <p class="example-spacer">
+  <mat-toolbar >
+  
+    <section>
+     
+      <div class="example-button-row">
+        
+        <button mat-button routerLink="/usermaintain" id="rightid"><mat-icon>assignment_ind</mat-icon>User Maintenance </button>
+        <button mat-button [matMenuTriggerFor]="belowMenu"><mat-icon>assignment</mat-icon>Master Maintenance</button>
+        <mat-menu #belowMenu="matMenu" yPosition="below">
+           <button mat-menu-item routerLink="/mastertype">Master Type Maintenance</button>
+             <button mat-menu-item routerLink="/mastermaintain">Master  Maintenance</button>
+          </mat-menu>
+      
+        <button mat-button id="btn-logout" routerLink="/login"><mat-icon>lock</mat-icon>Logout</button>
+       
+      </div>
+    </section>
+  </mat-toolbar>
+</p> 
+</body>

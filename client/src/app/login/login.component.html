@@ -1,0 +1,35 @@
+<body><div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="text-center">
+                    <h1>Login</h1>
+                    <h2 id="alertvar" class="text-center textred pt-2" >{{WarningMessage}}</h2>
+                </div>
+                <form>
+                    <form autocomplete="off">
+                        <div class="mb-3">
+                          <label for="exampleInputEmail1" class="form-label">Email ID</label>
+                          <input type="text" class="form-control" id="exampleInputEmail1" name="exampleInputEmail1" autocomplete="off"  [(ngModel)]="exampleInputEmail1"  aria-describedby="emailHelp">
+                        
+						  <p style="color:red" *ngIf="inputAlertVisible1">Please enter emailid</p>
+						</div>
+                        <div class="mb-3">
+                          <label for="exampleInputPassword1" class="form-label">Password</label>
+                          <input type="text" class="form-control" type="password" id="exampleInputPassword1" name="exampleInputPassword1" autocomplete="off" [hidden]="showPassword"  [(ngModel)]="exampleInputPassword1">
+						  <p style="color:red" *ngIf="inputAlertVisible2">password mismatched</p>
+						</div>
+                        <div class="">
+                            <a routerLink="/resetpassword">Forgot Password</a>
+                            <button id="sub" type="submit" class="btn btn-primary" (click)="submit()">Submit</button>
+
+                        </div>
+                     
+                   
+                </form>
+             
+                            
+
+            
+       
+   

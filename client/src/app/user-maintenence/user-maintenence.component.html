@@ -1,0 +1,132 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<app-nav-bar-admin></app-nav-bar-admin>
+
+<p>
+  <mat-toolbar>
+    <h5>User Maintenance</h5>
+
+  </mat-toolbar>
+</p>
+<div id="usermaintain">
+  <div class="gems">
+    <div class="buttons gen">
+      <button type="button" class="button gera" (click)="selectbtn()" >
+        Create New User
+      </button>
+    </div>
+    <div id="table">
+      <table class="table text">
+        <thead>
+          <tr>
+            <th scope="col">Action</th>
+          
+            <th scope="col">User Code</th>
+            <th scope="col">User Name</th>
+            <th scope="col">Email Id</th>
+            
+            <th scope="col" >Company</th>
+            <th scope="col">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let users of user">
+
+
+
+            <!-- <button type="button"  style="margin-right:5px;" (click)="update(users.UserId)"
+               class="btn btn-secondary btn-sm"><mat-icon>create</mat-icon></button>
+  
+              <button type="button"  class="btn btn-secondary btn-sm" (click)="delete()">
+                <mat-icon>delete</mat-icon></button> -->
+            <td>
+              <mat-icon data-bs-toggle="modal" data-bs-target="#exampleModal1">create</mat-icon>
+              <mat-icon (click)="delete()">delete</mat-icon>
+              <!-- <button type="button" style="margin-right:5px;"  
+                class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+                <mat-icon>create</mat-icon>
+              </button> -->
+
+               <!-- <button type="button" class="btn btn-secondary btn-sm"  (click)="delete()">
+                <mat-icon>delete</mat-icon>
+              </button>  -->
+
+            </td>
+
+
+            <!-- <td >Caresoft</td> -->
+           
+            <td>{{users.UserCode}}</td>
+            <td>{{users.UserName}}</td>
+            <td>{{users.Email}}</td>
+            <td>{{users.StausType}}</td>
+            <td>{{users.Description}}</td>
+          </tr>
+
+
+        </tbody>
+      </table>
+    </div>
+
+<!-- Create New User -->
+   
+      <div class="cont">
+        <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog m-auto mt-5">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title headers_cs" id="exampleModalLabel">User Maintenance</h1>
+                <button type="button" class="btn-close mar" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="container">
+                  <div class="title">Enter User Details</div>
+                    <div class="content">
+                     <form>
+                       <div class="user-details">
+                         <div class="input-box form-group">
+                            <span class="details">User Code</span>
+                            <input type="number" id="txtUserCode" name="txtusercode" [(ngModel)]="txtusercode"
+                            placeholder="Enter your User Code" required>
+                            
+  
+                        </div>
+                        <div class="input-box">
+                          <span class="details">User Name</span>
+                          <input type="text" id="txtUserName" name="txtusername" [(ngModel)]="txtusername"
+                            placeholder="Enter your User Name" required>
+                         
+  
+                        </div>
+                        
+                        <div class="input-box">
+                          <span class="details">Email</span>
+                          <input type="text" id="txtEmail" name="txtemail" [(ngModel)]="txtemail" placeholder="Enter your Email"
+                            required>
+                         
+                        </div>
+                       
+                        <!-- <div class="input-box">
+                          <span class="details">Status</span>
+                          <select [(ngModel)]="users.StatusID"  required>
+                            <option value="" disabled selected>Select the Status</option>
+                            <option value="101">Active</option>
+                            <option value="102">In-Active</option>
+                          </select>
+                         
+  
+                        </div> -->
+                      </div>
+                      <div class="button">
+                        <input type="submit" (click)="UpdateDetail()" value="Update" class="mar">
+                        <input type="reset" class="coolest" value="Reset">
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>

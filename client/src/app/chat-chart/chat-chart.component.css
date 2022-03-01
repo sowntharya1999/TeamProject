@@ -1,0 +1,50 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  /* Create two equal columns that floats next to each other */
+  .column1 {
+    float: left;
+    width: 75%;
+    background-color:lavender;
+
+    padding: 10px;
+    height: 400px; /* Should be removed. Only for demonstration */
+   
+  }
+  .column2 {
+    float: left;
+    width: 25%;
+    padding: 10px;
+    height: 400px; 
+    background-color:lavender;
+  }
+
+body{
+  margin-top: -50px;
+}
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  #selectchatstatus{
+    width: 10%;
+    height:auto;
+  }
+
+  #divchart{
+    width: 300px;
+    height: 300px;
+
+  }
+
+#choosechatgraph{
+  color:purple;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 15px;
+}
+

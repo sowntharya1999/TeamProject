@@ -1,0 +1,190 @@
+
+
+* {
+  box-sizing: border-box;
+  
+
+}
+
+
+
+/* Create two equal columns that floats next to each other */
+/* .column1 {
+  float: left;
+  background-color:lavender;
+
+  width: 75%;
+  padding: 10px;
+  height: 300px; 
+} */
+/* .column2 {
+  float: left;
+  width: 25%;
+  padding: 10px;
+  height: 300px; 
+  background-color:lavender;
+} */
+
+/* .chat{
+  height: 30px;
+  width: 60px;
+  color:rgb(8, 43, 54);
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 15px;
+  border-radius: 8px;
+  border-width: 0px;
+  background-color: gold;
+} */
+
+
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* #statusselect{
+  width: 10%;
+  height:auto;
+} */
+
+#choosegraph{
+  /* color:purple; */
+   margin-left: 2px;
+  font-family:'Times New Roman', Times, serif ;
+  /* font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+  font-size: 15px;
+}
+/* #chatbox{
+/* color:slateblue; */
+
+body{
+  height: 50px;
+    
+}
+
+/*navbar*/
+#btn-logout{
+  margin-left: 20px;
+} 
+#PROFILE{
+  margin-left: 900px;
+}
+mat-toolbar{
+  background-color: rgb(201, 198, 198);
+  height: 42px;
+
+} 
+
+.dropdown {
+
+  width: 15%;
+
+  display: inline-block;
+
+  padding: 0px;
+
+  margin-left: 1%;
+
+  font-size: 15px;
+
+}
+#chaticon{
+  color: black;
+  /* float: right; */
+
+   /* margin-top: 140%; */
+  margin-left: 400px; 
+
+  /* padding-left: 100px; */
+  
+
+}
+
+
+
+#choosechart{
+  /* color:purple; */
+   margin-left: 2px;
+  font-family:'Times New Roman', Times, serif ;
+  /* font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+  font-size: 15px;
+}
+.dropdownlist{
+  width: 15%;
+
+  display:inline-block;
+
+  padding: 0px;
+
+  margin-left: 1%;
+
+  font-size: 15px;
+}
+#divbarchart{
+  width: 500px;
+}
+#divchatchart{
+  width: 300px;
+  height: 300px;
+}
+
+.column {
+
+  float: left;
+
+  width: 50%;
+
+  padding: 20px;
+
+  height: 400px; 
+
+}
+
+#icon{
+ /* margin-left: 600px; */
+ display: flex;
+ /* align-items: flex-end; */
+ justify-content: flex-end;
+ margin-right:10px ;
+ margin-top: 50px;
+}
+
+/* Clear floats after the columns */
+
+.row:after {
+
+  content: "";
+
+  display: table;
+
+  clear: both;
+
+}
+.column2{
+  margin-left: 700px;
+  margin-top:-80px;
+}
+.tsize{
+width:60%;
+border-top: 1pt solid black;
+}
+.grids{
+border-bottom: 1pt solid black;
+}
+
+.GridView {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 152%;
+margin-top: 30px;
+margin-left: 30px;
+  text-align: center;
+
+  
+} 
+.grid{
+  background-color: lightgrey;
+}

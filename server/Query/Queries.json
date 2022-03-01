@@ -1,0 +1,34 @@
+
+{
+
+   
+    "getAllMasterType" : "SELECT  * FROM SLMasterTypeMaintenance",
+    "addNewMasterTypeData":"Insert Into SLMasterTypeMaintenance(MasterTypeDescription,Status,CreatedBy,CreatedDate,ModifiedBy,ModifiedDate) values (@DescriptionType,@StatusType,@CreatedByType,@CreatedDateType,@ModifiedByType,@ModifiedDateType)",
+    "MasterTypeDelete" : "DELETE FROM SLMasterTypeMaintenance WHERE MasterTypeID=@mastertypeid",
+    "updateMasterTypeDetails" : "Update SLMasterTypeMaintenance set MasterTypeDescription=@Mastertypedescription,Status=@status,CreatedBy=@CreatedByType,CreatedDate=@CreatedDateType,ModifiedBy=@ModifiedByType,ModifiedDate=@ModifiedDateType where MasterTypeID=@MasterTypeIDType",
+   "getAllMasterTypeID": "select * from SLMasterTypeMaintenance WHERE MASTERTypeid = @mastertypeid",
+
+
+    "getAllMasterMaintenance" : "select S.MasterID,SL.MasterTypeDescription MasterType,SL.MasterTypeID,S.Description,S.Status from SLMasterMaintenance S JOIN SLMasterTypeMaintenance SL ON S.MasterTypeID = SL.MasterTypeID",
+    "addNewMasterMaintenanceData" : " Insert Into SLMasterMaintenance(MasterTypeID,Description,Status,CreatedBy,CreatedDate,ModifiedBy,ModifiedDate) values (@MasterTypeID1,@Description1,@Status1,@CreatedBy1,@CreatedDate1,@ModifiedBy1,@ModifiedDate1)",
+    "MasterMaintenenceDelete" : "DELETE FROM SLMasterMaintenance WHERE MasterTypeID=@mastertypeid",
+    "updateMasterMaintenenceDetails" : "Update SLMasterMaintenance set MasterTypeID=@MasterTypeIDType,Description=@MasterTypeDescription,Status=@status,CreatedBy=@CreatedByType,CreatedDate=@CreatedDateType,ModifiedBy=@ModifiedByType,ModifiedDate=@ModifiedDateType where MasterID=@masterid",
+
+    
+    "getAllUserMaintenance":"SELECT MM.UserName,MM.UserCode,MM.Email,MT.Description,M.Description as StausType, MM.Password FROM [dbo].[SLUserMaintenance] MM JOIN [dbo].[SLMasterMaintenance] MT ON MT.MasterID = MM.StatusID  JOIN [dbo].[SLMasterMaintenance] M ON M.MasterID = MM.CompanyID",
+    "addNewUserMaintenance": "Insert into SLUserMaintenance (UserCode,UserName,Email,StatusID,CreatedBy,CreatedDate,ModifiedBy,ModifiedDate,Password,CompanyID) values(@usercode,@username,@email,@statusid,@createdby,@createddate,@modifiedby,@modifieddate,@password,@companyid)",
+    "UpdateUserMaintenance" : "Update  SLUserMaintenance set     UserCode=@userCode,UserName=@userName,Email=@email,Company=@company,StatusID=@Status,CreatedBy=@createdBy,CreatedDate=@createdDate,Password=@password where UserId=@userID",
+    "getfiltervalues" : "SELECT MasterID,MM.Description,MM.MasterTypeID FROM [dbo].[SLMasterMaintenance] MM JOIN [dbo].[SLMasterTypeMaintenance] MT ON MM.MasterTypeID = MT.MasterTypeID WHERE MT.MasterTypeDescription ='Company' ORDER BY MM.Description",
+    "getstatusfiltervalues" : "   SELECT MasterID,MM.Description,MM.MasterTypeID,MT.MasterTypeDescription FROM [dbo].[SLMasterMaintenance] MM JOIN [dbo].[SLMasterTypeMaintenance] MT ON MM.MasterTypeID = MT.MasterTypeID where MT.MasterTypeDescription = 'Status'",
+    
+    
+    
+    "getAllchart" : "truncate table SLUser insert SLUser(Company)  SELECT Description FROM SLMasterMaintenance where mastertypeid=1024  SELECT c.Description, isnull( COUNt(*),0 ) Active INTO #TEMP1 FROM SLUserMaintenance p INNER JOIN SLMasterMaintenance c ON c.MasterID = p.CompanyID where p.StatusID = 121  GROUP BY c.Description ORDER BY Active DESC ; SELECT c.Description,isnull( COUNT(*),0) Active INTO #TEMP2 FROM SLUserMaintenance p INNER JOIN SLMasterMaintenance c ON c.MasterID = p.CompanyID where p.StatusID = 123  GROUP BY c.Description ORDER BY Active DESC ; UPDATE  w set w.Active = P.ACTIVE from  SLUser w  join #TEMP1 p on W.Company = P.Description UPDATE  w set w.InActive = P.ACTIVE from  SLUser w  join #TEMP2 p on W.Company = P.Description select Company,isnull(Active,0)as Active,Isnull(InActive,0)as INActive from SLUser"
+    
+    
+    
+}
+
+   
+    
+

@@ -1,0 +1,23 @@
+.send-message {
+    margin: 10px;
+}
+
+.design {
+    margin: 4px;
+    border-radius: 12px;
+    width: 45%;
+    padding: 4px;
+    font-family: cursive;
+    font-size: medium;
+}
+
+.designs {
+  margin: 4px;
+  padding: 4px;
+  border-radius: 12px;
+  background-color: rgb(237, 238, 175);
+  font-family: cursive;
+  font-size: medium;
+  width: max-content;
+  height: max-content;
+}

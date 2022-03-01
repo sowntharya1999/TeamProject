@@ -1,0 +1,85 @@
+<div class="cont">
+
+          <!-- <div class="modal-header">
+            <h1 class="modal-title headers_cs" id="exampleModalLabel">User Maintenance</h1>
+            <button type="button" class="btn-close mar" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div> -->
+          <div class="modal-body">
+            <div class="container">
+              <div class="title">Enter User Details</div>
+                <div class="content">
+                 <form>
+                   <div class="user-details">
+                     <div class="input-box form-group">
+                        <span class="details">User Code</span>
+                        <input type="text" name="txtUserCode" [(ngModel)]="txtUserCode"
+                        placeholder="Enter your User Code" required>
+                        <p style="color:red;font-size:10px;" *ngIf="inputAlertVisible">Fill the user code</p>
+
+                    </div>
+                    <div class="input-box">
+                      <span class="details">User Name</span>
+                      <input type="text" name="txtUserName" [(ngModel)]="txtUserName"
+                        placeholder="Enter your User Name" required>
+                      <p style="color:red;font-size:10px;" *ngIf="inputAlertVisible">Fill the user code</p>
+
+                    </div>
+                    <div class="input-box ">
+                      <span class="details">Email ID</span>
+                      <input type="email" name="txtemail" [(ngModel)]="txtemail" placeholder="Enter your Email ID"
+                        required>
+                      <p style="color:red;font-size:10px;" *ngIf="inputAlertVisible">Fill the Email ID</p>
+                    </div>
+                    
+
+                    <div class="form-group col-md-3">
+                 
+                      <mat-label for="type" id="lab_masterType">Company<span>*</span></mat-label>                   
+                       <mat-select id="txtcompany" placeholder="Choose" class="form-control"  name= "txtcompany"   [(ngModel)]="txtcompany" (selectionChange)="selected($event)">
+                          
+                        <mat-option *ngFor="let UserMaintenance of companyfilter"  [value]="UserMaintenance">
+                            {{UserMaintenance.Description}}</mat-option>
+
+                          </mat-select>
+
+                         
+                        <p style="color:red" *ngIf="inputAlertVisible1">Choose any one master type</p>
+                    
+                    </div>
+
+                    <div class="form-group col-md-3">
+                 
+                      <mat-label for="type" id="lab_status">Status<span>*</span></mat-label>                   
+                       <mat-select id="txtstatus" placeholder="Choose" class="form-control"  name= "txtstatus"   [(ngModel)]="txtstatus" (selectionChange)="selectedstatus($event)">
+                          
+                        <mat-option *ngFor="let Userstatus of Statusfilter"  [value]="Userstatus">
+                            {{Userstatus.Description}}</mat-option>
+
+                          </mat-select>
+
+                         
+                        <p style="color:red" *ngIf="inputAlertVisible1">Choose any one master type</p>
+                    
+                    </div>
+                   
+                    <!-- <div class="input-box">
+                      <span class="details">Status</span>
+                      <select name="txtstatus" [(ngModel)]="txtstatus" id="status" required>
+                        <option value="" disabled selected>Select the Status</option>
+                        <option value="115">Active</option>
+                        <option value="116">In-Active</option>
+                      </select>
+                      <p style="color:red;font-size:10px;" *ngIf="inputAlertVisible">Select the status </p>
+
+                    </div> -->
+                  </div>
+                  <div class="button">
+                    <input type="submit" (click)="submit()" value="Save" class="mar">
+                    <input type="reset" class="coolest" value="Reset">
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+       
+   
