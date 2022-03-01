@@ -23,7 +23,7 @@ class MainController {
         res.send(error.message)
       }
     } 
-
+    
     async getAllMasterTypeID(req , res){
       try {
         const MasterTypeID = req.params.id;
@@ -32,6 +32,37 @@ class MainController {
                 const result = await poolConnection.request()
                   .input('mastertypeid',sql.Int,MasterTypeID)
                 .query(queries.getAllMasterTypeID)
+                res.json(result.recordset)
+        
+      } catch (error) {
+        res.status(500)
+        res.send(error.message)
+      }
+    } 
+
+    async getuserById(req , res){
+      try {
+        const UserId = req.params.id;
+       
+        const pool = await poolPromise
+                const result = await poolConnection.request()
+                  .input('userid',sql.Int,UserId)
+                .query(queries.getuserById)
+                res.json(result.recordset)
+        
+      } catch (error) {
+        res.status(500)
+        res.send(error.message)
+      }
+    } 
+    async getAllMasterMaintenanceID(req , res){
+      try {
+        const MasterID = req.params.id;
+       
+        const pool = await poolPromise
+                const result = await poolConnection.request()
+                  .input('masterid',sql.Int,MasterID)
+                .query(queries.getAllMasterMaintenanceID)
                 res.json(result.recordset)
         
       } catch (error) {

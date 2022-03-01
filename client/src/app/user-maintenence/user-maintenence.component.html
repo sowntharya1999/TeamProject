@@ -40,7 +40,7 @@
               <button type="button"  class="btn btn-secondary btn-sm" (click)="delete()">
                 <mat-icon>delete</mat-icon></button> -->
             <td>
-              <mat-icon data-bs-toggle="modal" data-bs-target="#exampleModal1">create</mat-icon>
+              <mat-icon (click)="updateusers()"  >create</mat-icon>
               <mat-icon (click)="delete()">delete</mat-icon>
               <!-- <button type="button" style="margin-right:5px;"  
                 class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal1">
@@ -68,65 +68,3 @@
       </table>
     </div>
 
-<!-- Create New User -->
-   
-      <div class="cont">
-        <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog m-auto mt-5">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h1 class="modal-title headers_cs" id="exampleModalLabel">User Maintenance</h1>
-                <button type="button" class="btn-close mar" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <div class="container">
-                  <div class="title">Enter User Details</div>
-                    <div class="content">
-                     <form>
-                       <div class="user-details">
-                         <div class="input-box form-group">
-                            <span class="details">User Code</span>
-                            <input type="number" id="txtUserCode" name="txtusercode" [(ngModel)]="txtusercode"
-                            placeholder="Enter your User Code" required>
-                            
-  
-                        </div>
-                        <div class="input-box">
-                          <span class="details">User Name</span>
-                          <input type="text" id="txtUserName" name="txtusername" [(ngModel)]="txtusername"
-                            placeholder="Enter your User Name" required>
-                         
-  
-                        </div>
-                        
-                        <div class="input-box">
-                          <span class="details">Email</span>
-                          <input type="text" id="txtEmail" name="txtemail" [(ngModel)]="txtemail" placeholder="Enter your Email"
-                            required>
-                         
-                        </div>
-                       
-                        <!-- <div class="input-box">
-                          <span class="details">Status</span>
-                          <select [(ngModel)]="users.StatusID"  required>
-                            <option value="" disabled selected>Select the Status</option>
-                            <option value="101">Active</option>
-                            <option value="102">In-Active</option>
-                          </select>
-                         
-  
-                        </div> -->
-                      </div>
-                      <div class="button">
-                        <input type="submit" (click)="UpdateDetail()" value="Update" class="mar">
-                        <input type="reset" class="coolest" value="Reset">
-                      </div>
-                    </form>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-    </div>
-  </div>

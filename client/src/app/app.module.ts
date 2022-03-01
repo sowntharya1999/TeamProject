@@ -34,6 +34,7 @@ import { UsernnameComponent } from './components/usernname/usernname.component';
 import { MasterTypeEditComponent } from './master-type-edit/master-type-edit.component';
 import { MasterMaintenenceEditComponent } from './master-maintenence-edit/master-maintenence-edit.component';
 import { CreateUserComponent } from './create-user/create-user.component';
+import { UserupdateComponent } from './userupdate/userupdate.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { CreateUserComponent } from './create-user/create-user.component';
     UsernnameComponent,
     MasterTypeEditComponent,
     MasterMaintenenceEditComponent,
-    CreateUserComponent
+    CreateUserComponent,
+    UserupdateComponent
   ],
   imports: [
     BrowserModule,

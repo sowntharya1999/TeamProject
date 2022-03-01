@@ -1,12 +1,42 @@
+ <form>
+    
+    <div class="form-row">
+      <!-- <div class="col">
+        <label for="type" id="lab_masterType">Master Type<span>*</span></label>
+        <mat-select id="mastertype" class="form-control"  name= "mastertype" [(value)]="mastertype" (selectionChange)="selected($event)">
+            <mat-option *ngFor="let MasterMaintenance of MasterType" [value]="MasterMaintenance">
+              {{MasterMaintenance.MasterTypeDescription}}</mat-option></mat-select>
+         <p style="color:red" *ngIf="inputAlertVisible">Choose any one master type</p>
+    </div> -->
+   
 
+    
+        <div class="col">
+            <label class="text-inf">Master Type Description</label><span>*</span>
+            <input type="text"  class="form-control" id="txtmasterdescription"  name= "txtmasterdescription" [(ngModel)]="MASterMaintain[0].Description"  />
+            <p style="color:red" *ngIf="inputAlertVisible1">Choose any one master type</p>
+      </div>
+
+    
+      <div class="col">
+        <label>Status</label><span>*</span>
+        <select class="form-control"   
+                style="width:150px;" id="status" name= "status" [(ngModel)]="MASterMaintain[0].Status" >
+                    <option value="Active">Active</option>
+                    <option value="In-Active">In-Active</option>
+                </select>
+                <p style="color:red" *ngIf="inputAlertVisible2">Choose any one master type</p>
+      </div>
+      </div>
+      
+    
+    <button id="butto1" mat-raised-button color="grey" (click)="UpdateDetail()" >update</button>
+   
+  </form> 
                 
- <body><div>
+  <!-- <body><div>
     <table>
-          <!-- <tr>
-            <td><label>Master ID</label></td>
-            <td>:</td>
-             <td>{{MasterID}}</td> 
-        </tr><br> -->
+         
        <tr>
            <td>    <label for="type" id="lab_masterType">Master Type<span>*</span></label></td>
            <td>:</td> 
@@ -46,4 +76,4 @@
 </div> 
 
  
-    <button id="butto1" mat-raised-button color="primary" (click)="UpdateDetail()" >update</button>
+    <button id="butto1" mat-raised-button color="primary" (click)="UpdateDetail()" >update</button>  -->

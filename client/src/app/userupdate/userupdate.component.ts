@@ -1,25 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { IUsermaintenance } from '../Models/usermaintenance';
-import { Router } from '@angular/router';
-import { ServicesService } from '../Services/services.service';
-import { UserEditComponent } from '../user-edit/user-edit.component';
 import { MatSelectChange } from '@angular/material/select';
-import { IMasterType } from '../Models/master-type';
-import { IMasterMaintenance } from '../Models/master-maintenance';
-import { Icompanyfilter } from '../Models/icompanyfilter';
 import { CreateUserComponent } from '../create-user/create-user.component';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
-import { UserupdateComponent } from '../userupdate/userupdate.component';
-
-
+import { Icompanyfilter } from '../Models/icompanyfilter';
+import { IMasterMaintenance } from '../Models/master-maintenance';
+import { IMasterType } from '../Models/master-type';
+import { IUsermaintenance } from '../Models/usermaintenance';
+import { ServicesService } from '../Services/services.service';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-user-maintenence',
-  templateUrl: './user-maintenence.component.html',
-  styleUrls: ['./user-maintenence.component.css']
+  selector: 'app-userupdate',
+  templateUrl: './userupdate.component.html',
+  styleUrls: ['./userupdate.component.css']
 })
-export class UserMaintenenceComponent  {
+export class UserupdateComponent implements OnInit {
+
   Temp: any =  sessionStorage.getItem("UserId");
 
   Userid:number = parseInt(this.Temp);
@@ -163,5 +159,5 @@ result:string="";
     alert("Do you want to delete?");
 
   }
-}
 
+}

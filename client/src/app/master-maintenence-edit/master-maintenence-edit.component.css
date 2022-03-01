@@ -24,11 +24,11 @@ body{
 }
 #butto1{
     margin-top: 20px;
-    margin-left: 360px;
+    margin-left: 470px;
+    background-color: grey;
+    color: whitesmoke;
 }
-#butto2{
-    margin-left: 100px;
-}
+
 span{
     color: red;
 }

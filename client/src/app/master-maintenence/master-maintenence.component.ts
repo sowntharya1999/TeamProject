@@ -121,7 +121,7 @@ export class MasterMaintenenceComponent implements OnInit {
 
   update(MasterType:string, MasterID:number){
     sessionStorage.setItem("MasterID",JSON.stringify(MasterID));
-     sessionStorage.setItem("MasterType",JSON.stringify(MasterType));
+    
    
     this.dialogRef.open(MasterMaintenenceEditComponent);
   }

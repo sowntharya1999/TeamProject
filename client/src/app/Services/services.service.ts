@@ -76,6 +76,15 @@ export class ServicesService {
   GetMasterTypeID(MasterTypeID:number): Observable<IMasterType[]> {
     return this.http.get<IMasterType[]>("http://localhost:8080/api/getAllMasterTypeID/" + MasterTypeID);
   }
+
+  GetMasterMasterID(MasterID:number): Observable<IMasterMaintenance[]> {
+    return this.http.get<IMasterMaintenance[]>("http://localhost:8080/api/getAllMasterMaintenanceID/" + MasterID);
+  }
+
+  GetUserMasterID(UserID:number): Observable<IUsermaintenance[]> {
+    return this.http.get<IUsermaintenance[]>("http://localhost:8080/api/getuserById/" + UserID);
+  }
+  
   RemoveMasterMasterMaintenence(MasterTypeID: number) {
     return this.http.delete("http://localhost:8080/api/MasterMaintenenceDelete/" + MasterTypeID );
   }

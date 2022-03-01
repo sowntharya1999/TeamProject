@@ -12,8 +12,10 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
 import { ChatWindowComponent } from './chat-window/chat-window.component';
 import { UserEditComponent } from './user-edit/user-edit.component';
 import { MasterTypeEditComponent } from './master-type-edit/master-type-edit.component';
+import { UserupdateComponent } from './userupdate/userupdate.component';
 
 const routes: Routes = [
+  {path:'userupdate',component:UserupdateComponent},
   {path:'mastertypeEdit' ,component:MasterTypeEditComponent},
   {path:'userEdit',component:UserEditComponent},
   {path:'chatwindow',component:ChatWindowComponent},

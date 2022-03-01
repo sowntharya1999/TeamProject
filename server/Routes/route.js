@@ -19,11 +19,13 @@ router.get('/api/getAllMasterType', controller.getAllMasterType);
  router.post('/api/addNewUserMaintenance' , controller.addNewUserMaintenance);
  router.put('/api/UpdateUserMaintenance',controller.UpdateUserMaintenance);
  router.delete('/api/MasterMaintenenceDelete/:id' , controller.MasterMaintenenceDelete);
+ router.get('/api/getAllMasterMaintenanceID/:id' , controller.getAllMasterMaintenanceID);
 
  router.delete('/api/MasterTypeDelete/:id' , controller.MasterTypeDelete);
  router.get('/api/getAllchart' , controller.getAllchart);
  router.put('/api/updateMasterTypeDetails',controller.updateMasterTypeDetails);
  router.put('/api/updateMasterMaintenenceDetails',controller.updateMasterMaintenenceDetails);
+ router.get('/api/getuserById/:id' , controller.getuserById);
 //  app.use('/api/getAllData', router);
 
 module.exports = router;

@@ -21,9 +21,10 @@ export class MasterMaintenenceEditComponent implements OnInit {
   MasterType :IMasterType[]=[];
  
   user: IMasterMaintenance = {} as IMasterMaintenance;
-mastertype:string=""
-txtmasterdescription:string=""
-status:string=""
+MASterMaintain:IMasterMaintenance[]=[];
+ mastertype:string=""
+// txtmasterdescription:string=""
+// status:string=""
 inputAlertVisible1:any=false;
 inputAlertVisible2:any=false;
 inputAlertVisible:any=false;
@@ -31,33 +32,39 @@ inputAlertVisible:any=false;
   
   constructor(private Userservices: ServicesService) { 
     Userservices.GetMasterTypeMaintenance().subscribe((Mt) => {this.MasterType = Mt;});
+    Userservices.GetMasterMasterID(this.MasterTypeID).subscribe((p) => { this.MASterMaintain = p; });
+    
   }
 
   ngOnInit(): void {
   }
 
   UpdateDetail() {
-    if(this.txtmasterdescription == ''){
+  //  var mastertype=this.MASterMaintain[0].MasterTypeID;
+  var  txtmasterdescription:string=this.MASterMaintain[0].Description;
+  var  status:string=this.MASterMaintain[0].Status;
+  
+    if(txtmasterdescription == ''){
       this.inputAlertVisible1 = true;
     }else{
       this.inputAlertVisible1 = false;
     }
-    if(this.status == ''){
+    if(status == ''){
       this.inputAlertVisible2 = true;
      }else{
       this.inputAlertVisible2 = false;
      }
-     if(this.mastertype == ''){
+     if(this.mastertype == ""){
       this.inputAlertVisible = true;
     }else{
       this.inputAlertVisible = false;
     }
-    if(this.txtmasterdescription != '' && this.status != null )
+    if(txtmasterdescription != '' && status != null )
      {
      this.user.MasterID = this.Masterid;
      this.user.MasterTypeID=this.MasterMaintainId;
-    this.user.Description= this.txtmasterdescription;
-    this.user.Status = this.status;
+    this.user.Description= txtmasterdescription;
+    this.user.Status = status;
     
     this.user.CreatedBy=350586;
     this.user.CreatedDate="2022-12-02T00:00:00.000Z";
