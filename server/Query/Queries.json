@@ -14,7 +14,7 @@
     
     "getAllUserMaintenance":"SELECT MM.UserId, MM.UserName,MM.UserCode,MM.Email,MT.Description,M.Description as StausType, MM.Password FROM [dbo].[SLUserMaintenance] MM JOIN [dbo].[SLMasterMaintenance] MT ON MT.MasterID = MM.StatusID  JOIN [dbo].[SLMasterMaintenance] M ON M.MasterID = MM.CompanyID",
     "addNewUserMaintenance": "Insert into SLUserMaintenance (UserCode,UserName,Email,StatusID,CreatedBy,CreatedDate,ModifiedBy,ModifiedDate,Password,CompanyID) values(@usercode,@username,@email,@statusid,@createdby,@createddate,@modifiedby,@modifieddate,@password,@companyid)",
-    "UpdateUserMaintenance" : "Update  SLUserMaintenance set UserCode=@userCode,UserName=@userName,Email=@email,StatusID=@Status,CreatedBy=@createdBy,CreatedDate=@createdDate,Password=@password where UserId=@userID",
+    "UpdateUserMaintenance" : "Update  SLUserMaintenance set UserCode=@userCode,UserName=@userName,Email=@email,StatusID=@statusID,CreatedBy=@createdBy,CreatedDate=@createdDate,Password=@password where UserId=@userID",
     "getfiltervalues" : "SELECT MasterID,MM.Description,MM.MasterTypeID FROM [dbo].[SLMasterMaintenance] MM JOIN [dbo].[SLMasterTypeMaintenance] MT ON MM.MasterTypeID = MT.MasterTypeID WHERE MT.MasterTypeDescription ='Company' ORDER BY MM.Description",
     "getstatusfiltervalues" : "   SELECT MasterID,MM.Description,MM.MasterTypeID,MT.MasterTypeDescription FROM [dbo].[SLMasterMaintenance] MM JOIN [dbo].[SLMasterTypeMaintenance] MT ON MM.MasterTypeID = MT.MasterTypeID where MT.MasterTypeDescription = 'Status'",
     "getAllMasterMaintenanceID" : "select * from SLMasterMaintenance WHERE MasterID = @masterid",
